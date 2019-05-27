@@ -37,7 +37,8 @@ def init_database():
         commit = Comment.query.get(i+1)
         db.session.delete(commit)
     db.session.commit()
-    user = User.query.get(1)
+
+    user = User.query.get(2)
     print(10, user.images)
 '''
     # test query
