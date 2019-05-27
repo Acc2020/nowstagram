@@ -4,6 +4,22 @@ from nowstagram import db
 from datetime import datetime
 import random
 
+class Comment(db.Model):
+    id = db.Column(db.Integer, primary_key = True, autoincrement = True)
+    content = db.Column(db.String(1024))
+    image_id = db.Column(db.Integer, db.ForeignKey('image.id'))
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+    status = db.Column(db.Integer, default = 0)
+    user = db.relationship('User')
+
+
+    def __init__(self, content, image_id, user_id):
+        self.content = content
+        self.image_id = image_id
+        self.user_id = user_id
+
+    def __repr__(self):
+        return '<Comment %d %s>' % (self.id, self.content)
 
 class Image(db.Model):
     id = db.Column(db.Integer, primary_key = True, autoincrement = True )
