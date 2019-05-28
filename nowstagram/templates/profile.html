@@ -42,58 +42,18 @@
         </header>
         <div class="list-mod">
             <div class="list clearfix">
-                <a class="item" href="#">
+                {% for image in user.images %}
+                <a class="item" href="/image/{{image.id}}">
                     <div class="img-box">
-                        <img src="../images/res/cat.jpg">
+                        <img src="{{image.url}}">
                     </div>
-                    <span class="ico-video">视频</span>
+                    <!-- <span class="ico-video">视频</span> -->
                     <div class="img-mask"></div>
                     <div class="interaction-wrap">
-                        <div class="interaction-item"><i class="icon-comment"></i> 23214</div>
+                        <div class="interaction-item"><i class="icon-comment"></i>{{image.comments|length}}</div>
                     </div>
                 </a>
-                <a class="item" href="#">
-                    <div class="img-box">
-                        <img src="../images/res/cat.jpg">
-                    </div>
-                    <span class="ico-video">视频</span>
-                    <div class="img-mask"></div>
-                    <div class="interaction-wrap">
-                        <div class="interaction-item"><i class=" icon-play"></i> 100</div>
-                        <div class="interaction-item"><i class="icon-comment"></i> 23214</div>
-                    </div>
-                </a>
-                <a class="item" href="#">
-                    <div class="img-box">
-                        <img src="../images/res/cat.jpg">
-                    </div>
-                    <div class="img-mask"></div>
-                    <div class="interaction-wrap">
-                        <div class="interaction-item"><i class="icon-heart"></i> 100</div>
-                        <div class="interaction-item"><i class="icon-comment"></i> 23214</div>
-                    </div>
-                </a>
-                <a class="item" href="#">
-                    <div class="img-box">
-                        <img src="../images/res/cat.jpg">
-                    </div>
-                    <div class="img-mask"></div>
-                    <div class="interaction-wrap">
-                        <div class="interaction-item"><i class="icon-heart"></i> 100</div>
-                        <div class="interaction-item"><i class="icon-comment"></i> 23214</div>
-                    </div>
-                </a>
-                <a class="item" href="#">
-                    <div class="img-box">
-                        <img src="../images/res/cat.jpg">
-                    </div>
-                    <span class="ico-video">视频</span>
-                    <div class="img-mask"></div>
-                    <div class="interaction-wrap">
-                        <div class="interaction-item"><i class=" icon-play"></i> 100</div>
-                        <div class="interaction-item"><i class="icon-comment"></i> 23214</div>
-                    </div>
-                </a>
+                {% endfor %}
             </div>
             <div class="more-content">
                 <a class="_oidfu" href="/taylorswift/?max_id=1229190628132188945">更多</a>

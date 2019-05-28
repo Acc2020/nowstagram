@@ -40,7 +40,7 @@ def init_database():
 
     user = User.query.get(2)
     print(10, user.images)
-'''
+
     # test query
     print(1, User.query.all())
     print(2, User.query.get(3))
@@ -55,7 +55,7 @@ def init_database():
     print(10, user.images, get_image_url())
     image = Image.query.get(2)
     print(11, get_image_url(), image.user)
-'''
+
 
 
 if __name__ == '__main__':
