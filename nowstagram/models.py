@@ -27,7 +27,7 @@ class Image(db.Model):
     url = db.Column(db.String(512))
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
     created_date = db.Column(db.DateTime)
-    #comments = db.relationship('Comment')
+    comments = db.relationship('Comment')
 
     def __init__(self, url, user_id):
         self.url = url
