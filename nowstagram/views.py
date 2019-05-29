@@ -1,9 +1,9 @@
 # -*- encoding = UTF-8 -*-
 
-from nowstagram import app
+from nowstagram import app,db
 from nowstagram.models import User, Image
 from flask import render_template, redirect, request, flash
-
+import random ,hashlib
 
 @app.route('/')
 def index():
@@ -43,7 +43,21 @@ def reg():
     username = request.values.get('username').strip()
     password = request.values.get('username').strip()
 
+    if (username == ''or password == ''):
+        redirect_with_msg('/regloginpage/', u'用户名或密码不能为空','relogin')
+
     user = User.query.filter_by(username=username).first()
     if user != None:
-        redirect_with_msg(u'用户名已经存在','relogin')
-        return redirect('/regloginpage/')
+        redirect_with_msg('/regloginpage/',u'用户名已经存在','relogin')
+
+    salt = '.'.join(random.sample('0123456789abcdefghigkABCDEFGHIGK'))
+    m = hashlib.md5()
+    m.update(password+salt)
+    password = m.hexdigest()
+    user = User(username, password, salt)
+    db.session.add()
+    db.session.commit()
+
+    return redirect('/')
+
+
