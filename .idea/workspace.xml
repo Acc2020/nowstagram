@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="74b24f97-26c4-4381-88bb-c26e16fc2ec5" name="Default Changelist" comment="">
+    <list default="true" id="74b24f97-26c4-4381-88bb-c26e16fc2ec5" name="Default Changelist" comment="Add regloginpage">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/nowstagram.db" beforeDir="false" afterPath="$PROJECT_DIR$/nowstagram.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nowstagram/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/nowstagram/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nowstagram/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/nowstagram/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/nowstagram/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/nowstagram/templates/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/nowstagram/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/nowstagram/views.py" afterDir="false" />
     </list>
@@ -19,52 +19,31 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/nowstagram/templates/login.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="182">
-              <caret line="7" column="29" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
+            <state relative-caret-position="286">
+              <caret line="11" column="48" selection-start-line="11" selection-start-column="48" selection-end-line="11" selection-end-column="48" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/nowstagram/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1478">
+              <caret line="57" column="23" selection-start-line="57" selection-start-column="23" selection-end-line="57" selection-end-column="23" />
+              <folding>
+                <element signature="e#28#57#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/nowstagram/views.py">
+        <entry file="file://$PROJECT_DIR$/nowstagram/__init__.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="370">
-              <caret line="36" column="36" lean-forward="true" selection-start-line="36" selection-start-column="36" selection-end-line="36" selection-end-column="36" />
+            <state relative-caret-position="208">
+              <caret line="8" column="23" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
               <folding>
-                <element signature="e#28#54#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/nowstagram/templates/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="612">
-              <caret line="76" lean-forward="true" selection-start-line="76" selection-end-line="76" selection-end-column="14" />
-              <folding>
-                <element signature="e#1144#1710#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/runserver.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="52">
-              <caret line="2" selection-start-line="2" selection-end-line="2" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/nowstagram/models.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="444">
-              <caret line="49" column="49" selection-start-line="49" selection-start-column="49" selection-end-line="49" selection-end-column="49" />
-              <folding>
-                <element signature="e#28#53#0" expanded="true" />
+                <element signature="e#28#51#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -85,22 +64,22 @@
       <list>
         <option value="$PROJECT_DIR$/runserver.py" />
         <option value="$PROJECT_DIR$/nowstagram/templates/base.html" />
-        <option value="$PROJECT_DIR$/nowstagram/__init__.py" />
         <option value="$PROJECT_DIR$/nowstagram/templates/index.html" />
         <option value="$PROJECT_DIR$/nowstagram/static/styles/pages/detail.css" />
         <option value="$PROJECT_DIR$/nowstagram/templates/pageDetail.html" />
         <option value="$PROJECT_DIR$/nowstagram/templates/profile.html" />
         <option value="$PROJECT_DIR$/manages.py" />
         <option value="$PROJECT_DIR$/nowstagram/app.conf" />
-        <option value="$PROJECT_DIR$/nowstagram/templates/login.html" />
         <option value="$PROJECT_DIR$/nowstagram/models.py" />
         <option value="$PROJECT_DIR$/nowstagram/views.py" />
+        <option value="$PROJECT_DIR$/nowstagram/templates/login.html" />
+        <option value="$PROJECT_DIR$/nowstagram/__init__.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="438" />
-    <option name="y" value="45" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="309" />
+    <option name="y" value="34" />
     <option name="width" value="1400" />
     <option name="height" value="995" />
   </component>
@@ -287,18 +266,39 @@
       <option name="project" value="LOCAL" />
       <updated>1559055932185</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Add login.html">
+      <created>1559142668957</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1559142668957</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Add login.html">
+      <created>1559142745403</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1559142745403</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Add regloginpage">
+      <created>1559143673132</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1559143673132</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="438" y="45" width="1400" height="995" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4989154" visible="true" weight="0.2261194" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4989154" visible="true" weight="0.16311301" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="0" sideWeight="0.49946696" weight="0.329718" />
-      <window_info anchor="bottom" id="Terminal" order="1" sideWeight="0.49835888" visible="true" weight="0.29732868" />
+      <window_info anchor="bottom" id="Version Control" order="0" sideWeight="0.49946696" weight="0.32868758" />
+      <window_info anchor="bottom" id="Terminal" order="1" sideWeight="0.49835888" weight="0.29732868" />
       <window_info anchor="bottom" id="Event Log" order="2" sideWeight="0.5010661" side_tool="true" weight="0.329718" />
       <window_info anchor="bottom" id="Message" order="3" />
       <window_info anchor="bottom" id="Find" order="4" />
@@ -310,7 +310,7 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Python Console" order="3" sideWeight="0.5007728" side_tool="true" weight="0.7013129" />
-      <window_info anchor="right" id="Run" order="4" sideWeight="0.50164115" side_tool="true" weight="0.37313432" />
+      <window_info anchor="right" id="Run" order="4" sideWeight="0.50164115" side_tool="true" visible="true" weight="0.28731343" />
     </layout>
     <layout-to-restore>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14925373" />
@@ -338,7 +338,9 @@
     <MESSAGE value="Add SQL CRUD" />
     <MESSAGE value="Add static and templates" />
     <MESSAGE value="Add index.html and pageDetail.html and profile,html" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add index.html and pageDetail.html and profile,html" />
+    <MESSAGE value="Add login.html" />
+    <MESSAGE value="Add regloginpage" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add regloginpage" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://D:/Python/Python37-32/Lib/site-packages/flask/config.py">
@@ -390,38 +392,8 @@
     <entry file="file://$PROJECT_DIR$/nowstagram/static/styles/pages/login.css">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/nowstagram/static/styles/pages/profile.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/manages.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="988">
-          <caret line="42" selection-start-line="42" selection-end-line="42" />
-          <folding>
-            <element signature="e#28#58#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nowstagram/templates/profile.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1274">
-          <caret line="49" column="62" selection-start-line="49" selection-start-column="62" selection-end-line="49" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/nowstagram.db">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nowstagram/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="13" selection-start-line="13" selection-end-line="13" />
-          <folding>
-            <element signature="e#28#51#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/nowstagram/app.conf">
       <provider selected="true" editor-type-id="text-editor">
@@ -440,10 +412,33 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/nowstagram/templates/base.html">
+    <entry file="file://$PROJECT_DIR$/nowstagram/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="546">
-          <caret line="21" column="30" lean-forward="true" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="30" />
+        <state relative-caret-position="1586">
+          <caret line="76" selection-start-line="76" selection-end-line="76" selection-end-column="14" />
+          <folding>
+            <element signature="e#1144#1710#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nowstagram/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="505">
+          <caret line="49" column="49" selection-start-line="49" selection-start-column="49" selection-end-line="49" selection-end-column="49" />
+          <folding>
+            <element signature="e#28#53#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manages.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="817">
+          <caret line="42" selection-start-line="42" selection-end-line="42" />
+          <folding>
+            <element signature="e#28#58#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -454,39 +449,55 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/nowstagram/templates/index.html">
+    <entry file="file://$PROJECT_DIR$/nowstagram/static/styles/pages/profile.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="76" lean-forward="true" selection-start-line="76" selection-end-line="76" selection-end-column="14" />
-          <folding>
-            <element signature="e#1144#1710#0" />
-          </folding>
+        <state relative-caret-position="-234" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nowstagram/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="21" column="30" lean-forward="true" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nowstagram/templates/profile.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="841">
+          <caret line="49" column="62" selection-start-line="49" selection-start-column="62" selection-end-line="49" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/Python/Python37-32/Lib/random.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="285" column="8" selection-start-line="285" selection-start-column="8" selection-end-line="285" selection-end-column="8" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/nowstagram/templates/login.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="7" column="29" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nowstagram/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="444">
-          <caret line="49" column="49" selection-start-line="49" selection-start-column="49" selection-end-line="49" selection-end-column="49" />
-          <folding>
-            <element signature="e#28#53#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="286">
+          <caret line="11" column="48" selection-start-line="11" selection-start-column="48" selection-end-line="11" selection-end-column="48" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/nowstagram/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="370">
-          <caret line="36" column="36" lean-forward="true" selection-start-line="36" selection-start-column="36" selection-end-line="36" selection-end-column="36" />
+        <state relative-caret-position="1478">
+          <caret line="57" column="23" selection-start-line="57" selection-start-column="23" selection-end-line="57" selection-end-column="23" />
           <folding>
-            <element signature="e#28#54#0" expanded="true" />
+            <element signature="e#28#57#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nowstagram/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="8" column="23" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
+          <folding>
+            <element signature="e#28#51#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -1,4 +1,4 @@
-# -*- encoding = UTF-8 -*-
+#-*- encoding = UTF-8 -*-
 
 from nowstagram import app,db
 from nowstagram.models import User, Image
@@ -29,6 +29,7 @@ def profile(user_id):
 
 @app.route('/regloginpage/')
 def regloginpage():
+
     return render_template('login.html')
 
 
@@ -37,7 +38,7 @@ def redirect_with_msg(target, msg, category):
         flash(msg,category=category)
     return redirect(target)
 
-@app.route('/reg/')
+@app.route('/reg/',methods={'post','get'})
 def reg():
     # request.args requser.form
     username = request.values.get('username').strip()
@@ -50,12 +51,12 @@ def reg():
     if user != None:
         redirect_with_msg('/regloginpage/',u'用户名已经存在','relogin')
 
-    salt = '.'.join(random.sample('0123456789abcdefghigkABCDEFGHIGK'))
+    salt = '.'.join(random.sample('0123456789abcdefghigkABCDEFGHIGK',10))
     m = hashlib.md5()
-    m.update(password+salt)
+    m.update(password.encode("utf-8")+salt.encode("utf-8"))
     password = m.hexdigest()
     user = User(username, password, salt)
-    db.session.add()
+    db.session.add(user)
     db.session.commit()
 
     return redirect('/')
