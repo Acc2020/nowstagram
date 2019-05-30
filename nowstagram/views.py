@@ -1,10 +1,10 @@
 # -*- encoding = UTF-8 -*-
 
-from nowstagram import app, db
+from nowstagram import app, db, login_manager
 from nowstagram.models import User, Image
 from flask import render_template, redirect, request, flash, get_flashed_messages
 import random, hashlib
-
+from flask_login import login_user, logout_user, current_user, login_required
 
 @app.route('/')
 def index():
@@ -21,6 +21,7 @@ def image(image_id):
 
 
 @app.route('/profile/<int:user_id>/')
+@login_required
 def profile(user_id):
     user = User.query.get(user_id)
     if user == None:
@@ -62,4 +63,16 @@ def reg():
     db.session.add(user)
     db.session.commit()
 
+    login_user(user)
+
     return redirect('/')
+
+
+@app.route('/logout/')
+def logout():
+    logout_user()
+    return redirect('/')
+
+@app.route('/login/')
+def login():
+    return 1
