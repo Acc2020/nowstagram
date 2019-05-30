@@ -1,9 +1,10 @@
-#-*- encoding = UTF-8 -*-
+# -*- encoding = UTF-8 -*-
 
-from nowstagram import app,db
+from nowstagram import app, db
 from nowstagram.models import User, Image
-from flask import render_template, redirect, request, flash
-import random ,hashlib
+from flask import render_template, redirect, request, flash, get_flashed_messages
+import random, hashlib
+
 
 @app.route('/')
 def index():
@@ -29,36 +30,36 @@ def profile(user_id):
 
 @app.route('/regloginpage/')
 def regloginpage():
-
-    return render_template('login.html')
+    msg = ''
+    for m in get_flashed_messages(with_categories=False, category_filter=['relogin']):
+        msg = msg + m
+    return render_template('login.html',msg = msg)
 
 
 def redirect_with_msg(target, msg, category):
     if msg != None:
-        flash(msg,category=category)
+        flash(msg, category=category)
     return redirect(target)
 
-@app.route('/reg/',methods={'post','get'})
+
+@app.route('/reg/', methods={'post', 'get'})
 def reg():
     # request.args requser.form
     username = request.values.get('username').strip()
-    password = request.values.get('username').strip()
-
-    if (username == ''or password == ''):
-        redirect_with_msg('/regloginpage/', u'用户名或密码不能为空','relogin')
+    password = request.values.get('password').strip()
 
     user = User.query.filter_by(username=username).first()
+    if (username == ''or password == ''):
+        return redirect_with_msg('/regloginpage', u'用户名或密码不能为空', 'relogin')
     if user != None:
-        redirect_with_msg('/regloginpage/',u'用户名已经存在','relogin')
+        return redirect_with_msg('/regloginpage', u'用户名已经存在', 'relogin')
 
-    salt = '.'.join(random.sample('0123456789abcdefghigkABCDEFGHIGK',10))
+    salt = '.'.join(random.sample('0123456789abcdefghigkABCDEFGHIGK', 10))
     m = hashlib.md5()
-    m.update(password.encode("utf-8")+salt.encode("utf-8"))
+    m.update(password.encode("utf-8") + salt.encode("utf-8"))
     password = m.hexdigest()
     user = User(username, password, salt)
     db.session.add(user)
     db.session.commit()
 
     return redirect('/')
-
-
