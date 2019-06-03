@@ -2,7 +2,7 @@
 
 from nowstagram import app, db, login_manager
 from nowstagram.models import User, Image
-from flask import render_template, redirect, request, flash, get_flashed_messages
+from flask import render_template, redirect, request, flash, get_flashed_messages,Flask
 import random, hashlib
 from flask_login import login_user, logout_user, current_user, login_required
 

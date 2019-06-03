@@ -56,16 +56,18 @@ class User(db.Model):
     def __repr__(self):
         return '[User %d %s] ' % (self.id, self.username)
 
-        # Flask Login接口
+        # Flask-Login接口
+    @property
     def is_authenticated(self):
         print('is_authenticated')
         return True
 
+    @property
     def is_active(self):
         print('is_active')
-
         return True
 
+    @property
     def is_anonymous(self):
         print('is_anonymous')
         return False

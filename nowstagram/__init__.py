@@ -9,7 +9,9 @@ app.jinja_env.add_extension('jinja2.ext.loopcontrols')
 app.config.from_pyfile('app.conf')
 app.secret_key = 'labor'
 db = SQLAlchemy(app)
-login_manager = LoginManager()
+login_manager = LoginManager(app)
+login_manager.login_view = '/regloginpage/'
+
 
 
 from nowstagram import views, models
