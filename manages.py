@@ -19,10 +19,10 @@ def init_database():
     db.create_all()
     for i in range(0, 100):
         db.session.add(User('User' + str(i + 1), 'a' + str(i)))
-        for j in range(0, 3):
+        for j in range(0, 10):
             db.session.add(Image(get_image_url(), i + 1))
             for k in range(0, 3):
-                db.session.add(Comment('This is comment' + str(k), 1 + i * 3 + j, i + 1))
+                db.session.add(Comment('This is comment' + str(k), 1 + i * 10 + j, i + 1))
     db.session.commit()
 
     for i in range(50, 100, 2):

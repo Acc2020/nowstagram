@@ -26,7 +26,8 @@ def profile(user_id):
     user = User.query.get(user_id)
     if user == None:
         return redirect('/')
-    return render_template('profile.html', user=user)
+    paginate = Image.query.filter_by(user_id = user_id).paginate(page=1, per_page=3, error_out=False)
+    return render_template('profile.html', user=user, image = paginate.items)
 
 
 @app.route('/regloginpage/')
