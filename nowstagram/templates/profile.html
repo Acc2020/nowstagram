@@ -1,8 +1,7 @@
 {% extends "base.html" %}
-{% block title %} 个人页 {% endblock %}
-{% block css %} /static/styles/pages/profile.css {% endblock  %}
+{% block title %}个人主页{% endblock%}
+{% block css %}/static/styles/pages/profile.css{% endblock%}
 {% block content %}
-
 <div class="page-main clearfix">
     <article>
         <header class="profile-detail clearfix">
@@ -37,15 +36,15 @@
                         <span class="s-num">909万</span>
                     </li>
                 </ul>
-                -->
+            -->
             </div>
         </header>
         <div class="list-mod">
-            <div class="list clearfix">
-                {% for image in image %}
+            <div class="list clearfix js-image-list">
+                {% for image in images: %}
                 <a class="item" href="/image/{{image.id}}">
                     <div class="img-box">
-                        <img src="{{image.url}}">
+                        <img src="{{ image.url }}">
                     </div>
                     <!-- <span class="ico-video">视频</span> -->
                     <div class="img-mask"></div>
@@ -55,11 +54,19 @@
                 </a>
                 {% endfor %}
             </div>
-            <div class="more-content">
-                <a class="_oidfu" href="/taylorswift/?max_id=1229190628132188945">更多</a>
+            {% if has_next %}
+            <div class="more-content js-load-more">
+                <a class="_oidfu" href="javascript:void(0);">更多</a>
             </div>
+            {% endif  %}
         </div>
     </article>
 </div>
-{% endblock %}
-
+{% endblock%}
+{% block js %}
+<script type="text/javascript">
+    window.uid = {{user.id}};
+</script>
+<script type="text/javascript" src="/static/js/jquery.js"></script>
+<script type="text/javascript" src="/static/js/profile.js"></script>
+{% endblock%}
