@@ -116,3 +116,8 @@ def logout():
 # @app.route('/login/')
 # def login():
 #     return 1
+
+
+@app.route('/upload',methods={'post'})
+def upload():
+    file = request.files['file']
