@@ -3,7 +3,7 @@
 from nowstagram import app, db, login_manager
 from nowstagram.models import User, Image
 from flask import render_template, redirect, request, flash, get_flashed_messages, Flask
-import random, hashlib, json
+import random, hashlib, json, uuid, os
 from flask_login import login_user, logout_user, current_user, login_required
 
 
@@ -21,8 +21,6 @@ def image(image_id):
     return render_template('pageDetail.html', image=image)
 
 
-
-
 @app.route('/profile/<int:user_id>/')
 @login_required
 def profile(user_id):
@@ -30,14 +28,15 @@ def profile(user_id):
     if user == None:
         return redirect('/')
     paginate = Image.query.paginate(page=1, per_page=3)
-    return render_template('profile.html', user = user, has_next=paginate.has_next, images=paginate.items)
+    return render_template('profile.html', user=user, has_next=paginate.has_next, images=paginate.items)
+
 
 @app.route('/profile/images/<int:user_id>/<int:page>/<int:per_page>/')
 def user_images(user_id, page, per_page):
     # 参数检查
     paginate = Image.query.filter_by(user_id=user_id).paginate(page=page, per_page=per_page)
 
-    map = {'has_next':paginate.has_next}
+    map = {'has_next': paginate.has_next}
     images = []
     for image in paginate.items:
         imgvo = {'id': image.id, 'url': image.url, 'comment_count': len(image.comments)}
@@ -112,12 +111,36 @@ def logout():
     logout_user()
     return redirect('/')
 
+
 ###
 # @app.route('/login/')
 # def login():
 #     return 1
 
+def save_to_local(file, file_name):
+    save_dir = app.config['UPLOAD_DIR']
+    file.save(os.path.join(save_dir, file_name))
+    return  '/image/' + file_name
 
-@app.route('/upload',methods={'post'})
+@app.route('/image/<image_name>')
+def view_image(image_name):
+    send_from_directory(app.config['UPLOAD_DIR'], image_name)
+
+
+@app.route('/upload/', methods={'post'})
 def upload():
+    #print(request.files)
+    #print(type(request.files))
     file = request.files['file']
+    #print(dir(file))
+    file_ext = ''
+    if file.filename.find('.') > 0 :
+        file_ext = file.filename.rsplit('.',1)[1].strip().lower()
+    if file_ext in app.config['ALLOWED_EXT']:
+        file_name = str(uuid.uuid1()).replace('-','') + '.' + file_ext
+        url = save_to_local(file, file_name)
+        if url != None:
+            db.session.add(Image(url, current_user.id))
+            db.session.commit()
+
+    return redirect('/profile/%d' % current_user.id)
