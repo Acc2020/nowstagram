@@ -2,7 +2,7 @@
 
 from nowstagram import app, db, login_manager
 from nowstagram.models import User, Image
-from flask import render_template, redirect, request, flash, get_flashed_messages, Flask
+from flask import render_template, redirect, request, flash, get_flashed_messages, send_from_directory, Flask
 import random, hashlib, json, uuid, os
 from flask_login import login_user, logout_user, current_user, login_required
 
@@ -124,7 +124,7 @@ def save_to_local(file, file_name):
 
 @app.route('/image/<image_name>')
 def view_image(image_name):
-    send_from_directory(app.config['UPLOAD_DIR'], image_name)
+     return send_from_directory(app.config['UPLOAD_DIR'], image_name)
 
 
 @app.route('/upload/', methods={'post'})
