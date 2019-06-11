@@ -17,14 +17,14 @@ def qiniu_upload_file(source_file, save_file_name):
     # 生成上传 Token，可以指定过期时间等
     token = q.upload_token(bucket_name, save_file_name)
 
-    print(type(token),token)
-    print(type(save_file_name),save_file_name)
-    print(type(source_file.stream),source_file.read())
-    print(type(token))
-    print(type(save_file_name))
-    print(type(source_file.read()))
+    # print(type(token),token)
+    # print(type(save_file_name),save_file_name)
+    # print(type(source_file.stream),source_file.read())
+    # print(type(token))
+    # print(type(save_file_name))
+    #print(type(source_file.read()))
 
-    ret, info = put_data(token, save_file_name, source_file.stream)
+    ret, info = put_data(token, save_file_name, source_file.stream.read())
 
     # if info.status_code == 200:
     #     # 表示上传成功, 返回文件名

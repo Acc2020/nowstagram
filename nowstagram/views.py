@@ -175,8 +175,8 @@ def upload():
         file_ext = file.filename.rsplit('.', 1)[1].strip().lower()
     if file_ext in app.config['ALLOWED_EXT']:
         file_name = str(uuid.uuid1()).replace('-', '') + '.' + file_ext
-        #url = qiniu_upload_file(file, file_name)
-        url = save_to_local(file, file_name)
+        url = qiniu_upload_file(file, file_name)
+        #url = save_to_local(file, file_name)
         if url != None:
             db.session.add(Image(url, current_user.id))
             db.session.commit()
