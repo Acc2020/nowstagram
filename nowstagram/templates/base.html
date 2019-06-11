@@ -4,8 +4,9 @@
     <meta charset="utf-8">
     <meta name="description" content="">
     <meta name="Keywords" content="">
-    <title>{% block title %} {% endblock %}</title>
-    <link rel="stylesheet" href="{% block css %} {%  endblock %}">
+
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% block css %}{% endblock %}">
 </head>
 <body>
     <div class="container">
@@ -15,15 +16,15 @@
                     <a class="logo" href="/">logo</a>
                     <div class="web-menu">
                         {% if current_user.is_authenticated %}
-                        <a class="profile-ico" href="/profile/{{current_user.id}}"> {{current_user.username }}</a>
-                        {%  else %}
-                        <a class="profile-ico" href="/regloginpage/}}"> 登录 注册</a>
+                        <a class="profile-ico" href="/profile/{{current_user.id}}">{{current_user.username}}</a>
+                        {% else %}
+                        <a class="profile-ico" href="/regloginpage/">登陆/注册</a>
                         {% endif %}
                     </div>
                 </div>
             </header>
 
-            {% block content %} {% endblock %}
+            {% block content %}{% endblock %}
 
             <footer class="footer">
                 <div class="footer-cont" style="max-width:935px;">
@@ -95,5 +96,6 @@
         </section>
     </div>
 </body>
-{% block js %} {% endblock %}
+{% block js %}{% endblock %}
 </html>
+

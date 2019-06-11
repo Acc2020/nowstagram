@@ -171,3 +171,5 @@ def upload():
             db.session.commit()
 
     return redirect('/profile/%d' % current_user.id)
+
+

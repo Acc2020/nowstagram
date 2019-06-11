@@ -12,7 +12,8 @@
 }
 .pic-wrapper img {
     display: block;
-    width: 598px;
+    width: 600px;
+    height: 600px;
 }
 
 .pic-discuss {

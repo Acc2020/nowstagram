@@ -19,7 +19,7 @@ def qiniu_upload_file(source_file, save_file_name):
 
     print(type(token),token)
     print(type(save_file_name),save_file_name)
-    print(type(source_file.stream),source_file.stream)
+    print(type(source_file.stream),source_file.read())
     print(type(token))
     print(type(save_file_name))
     print(type(source_file.read()))
