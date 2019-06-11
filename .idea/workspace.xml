@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="74b24f97-26c4-4381-88bb-c26e16fc2ec5" name="Default Changelist" comment="">
+    <list default="true" id="74b24f97-26c4-4381-88bb-c26e16fc2ec5" name="Default Changelist" comment="Add upload and save_to_local">
+      <change afterPath="$PROJECT_DIR$/qiniusdk.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/nowstagram.db" beforeDir="false" afterPath="$PROJECT_DIR$/nowstagram.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/nowstagram/app.conf" beforeDir="false" afterPath="$PROJECT_DIR$/nowstagram/app.conf" afterDir="false" />
@@ -15,11 +16,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/nowstagram/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="312">
-              <caret line="126" column="25" selection-start-line="126" selection-start-column="25" selection-end-line="126" selection-end-column="25" />
+            <state relative-caret-position="269">
+              <caret line="166" column="19" selection-start-line="166" selection-start-column="19" selection-end-line="166" selection-end-column="19" />
               <folding>
                 <element signature="e#28#73#0" expanded="true" />
               </folding>
@@ -27,16 +28,61 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/qiniusdk.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-185">
+              <caret line="15" column="4" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
+              <folding>
+                <element signature="e#25#51#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/nowstagram/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="335">
+              <caret line="50" column="32" selection-start-line="50" selection-start-column="32" selection-end-line="50" selection-end-column="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/nowstagram/app.conf">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="104">
-              <caret line="4" column="10" selection-start-line="4" selection-end-line="4" selection-end-column="10" />
+            <state relative-caret-position="208">
+              <caret line="8" column="48" lean-forward="true" selection-start-line="8" selection-start-column="48" selection-end-line="8" selection-end-column="48" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/manages.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+              <folding>
+                <element signature="e#28#58#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>imgvo</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
@@ -59,16 +105,18 @@
         <option value="$PROJECT_DIR$/manages.py" />
         <option value="$PROJECT_DIR$/nowstagram/templates/base.html" />
         <option value="$PROJECT_DIR$/nowstagram/templates/profile.html" />
-        <option value="$PROJECT_DIR$/nowstagram/app.conf" />
+        <option value="$PROJECT_DIR$/nowstagram/qiniusdk.py" />
         <option value="$PROJECT_DIR$/nowstagram/views.py" />
+        <option value="$PROJECT_DIR$/nowstagram/app.conf" />
+        <option value="$PROJECT_DIR$/qiniusdk.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-107" />
-    <option name="y" value="116" />
+    <option name="x" value="383" />
+    <option name="y" value="126" />
     <option name="width" value="1400" />
-    <option name="height" value="995" />
+    <option name="height" value="988" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -78,7 +126,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -112,14 +159,16 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/nowstagram/static" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/nowstagram" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\pyspace\nowstagram\nowstagram" />
       <recent name="E:\pyspace\nowstagram\nowstagram\static" />
       <recent name="E:\pyspace\nowstagram\nowstagram\templates" />
     </key>
@@ -338,18 +387,32 @@
       <option name="project" value="LOCAL" />
       <updated>1559746583289</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Add upload and save_to_local">
+      <created>1560094541247</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1560094541248</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Add upload and save_to_local">
+      <created>1560096386285</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1560096386285</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4989154" visible="true" weight="0.17910448" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4989154" visible="true" weight="0.15671642" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="0" sideWeight="0.49946696" weight="0.32868758" />
-      <window_info anchor="bottom" id="Terminal" order="1" sideWeight="0.49835888" visible="true" weight="0.29718006" />
+      <window_info anchor="bottom" id="Version Control" order="0" sideWeight="0.49946696" weight="0.3286334" />
+      <window_info anchor="bottom" id="Terminal" order="1" sideWeight="0.49835888" visible="true" weight="0.26898047" />
       <window_info anchor="bottom" id="Event Log" order="2" sideWeight="0.5010661" side_tool="true" weight="0.329718" />
       <window_info anchor="bottom" id="Message" order="3" />
       <window_info anchor="bottom" id="Find" order="4" />
@@ -361,7 +424,7 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Python Console" order="3" sideWeight="0.5007728" side_tool="true" weight="0.7013129" />
-      <window_info active="true" anchor="right" id="Run" order="4" sideWeight="0.50164115" side_tool="true" visible="true" weight="0.26865673" />
+      <window_info active="true" anchor="right" id="Run" order="4" sideWeight="0.50164115" side_tool="true" visible="true" weight="0.37579957" />
     </layout>
     <layout-to-restore>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14925373" />
@@ -399,7 +462,8 @@
     <MESSAGE value="Add paginate" />
     <MESSAGE value="Add js AJAX" />
     <MESSAGE value="Add upload" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add upload" />
+    <MESSAGE value="Add upload and save_to_local" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add upload and save_to_local" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://D:/Python/Python37-32/Lib/site-packages/flask/config.py">
@@ -505,9 +569,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Add_login_html.patch">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/nowstagram/static/styles/pages/index.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1482">
@@ -532,16 +593,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/manages.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="494">
-          <caret line="23" column="28" selection-start-line="23" selection-start-column="28" selection-end-line="23" selection-end-column="28" />
-          <folding>
-            <element signature="e#28#58#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/nowstagram/templates/pageDetail.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="26">
@@ -552,26 +603,65 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/nowstagram/app.conf">
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/BNZ.5cfe12e518138bad/qiniusdk.py" />
+    <entry file="file://$PROJECT_DIR$/nowstagram/qiniusdk.py" />
+    <entry file="file://D:/Python/Python37-32/Lib/site-packages/qiniu/services/storage/uploader.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="4" column="10" selection-start-line="4" selection-end-line="4" selection-end-column="10" />
+        <state relative-caret-position="301">
+          <caret line="136" lean-forward="true" selection-start-line="136" selection-end-line="136" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/nowstagram/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="26">
+        <state relative-caret-position="335">
           <caret line="50" column="32" selection-start-line="50" selection-start-column="32" selection-end-line="50" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nowstagram/app.conf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="8" column="48" lean-forward="true" selection-start-line="8" selection-start-column="48" selection-end-line="8" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Add_login_html.patch">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.qiniu_pythonsdk_hostscache.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="191" selection-start-column="191" selection-end-column="191" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manages.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+          <folding>
+            <element signature="e#28#58#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/nowstagram/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="126" column="25" selection-start-line="126" selection-start-column="25" selection-end-line="126" selection-end-column="25" />
+        <state relative-caret-position="269">
+          <caret line="166" column="19" selection-start-line="166" selection-start-column="19" selection-end-line="166" selection-end-column="19" />
           <folding>
             <element signature="e#28#73#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/qiniusdk.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-185">
+          <caret line="15" column="4" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
+          <folding>
+            <element signature="e#25#51#0" expanded="true" />
           </folding>
         </state>
       </provider>

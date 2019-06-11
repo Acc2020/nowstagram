@@ -1,10 +1,37 @@
 # -*- encoding = UTF-8 -*-
 
 from nowstagram import app, db, login_manager
-from nowstagram.models import User, Image
+from nowstagram.models import User, Image, Comment
 from flask import render_template, redirect, request, flash, get_flashed_messages, send_from_directory, Flask
 import random, hashlib, json, uuid, os
 from flask_login import login_user, logout_user, current_user, login_required
+from qiniusdk import qiniu_upload_file
+
+
+@app.route('/index/images/<int:page>/<int:per_page>/')
+def index_images(page, per_page):
+    paginate = Image.query.order_by(db.desc(Image.id)).paginate(page=page, per_page=per_page, error_out=False)
+    map = {'has_next': paginate.has_next}
+    images = []
+    for image in paginate.items:
+        comments = []
+        for i in range(0, min(2, len(image.comments))):
+            comment = image.comments[i]
+            comments.append({'username':comment.user.username,
+                             'user_id':comment.user_id,
+                             'content':comment.content})
+        imgvo = {'id': image.id,
+                 'url': image.url,
+                 'comment_count': len(image.comments),
+                 'user_id': image.user_id,
+                 'head_url':image.user.head_url,
+                 'created_date':str(image.created_date),
+                 'comments':comments}
+        images.append(imgvo)
+
+    map['images'] = images
+    return json.dumps(map)
+
 
 
 @app.route('/')
@@ -35,7 +62,6 @@ def profile(user_id):
 def user_images(user_id, page, per_page):
     # 参数检查
     paginate = Image.query.filter_by(user_id=user_id).paginate(page=page, per_page=per_page)
-
     map = {'has_next': paginate.has_next}
     images = []
     for image in paginate.items:
@@ -112,33 +138,34 @@ def logout():
     return redirect('/')
 
 
-###
-# @app.route('/login/')
-# def login():
-#     return 1
+@app.route('/image/<image_name>')
+def view_image(image_name):
+    return send_from_directory(app.config['UPLOAD_DIR'], image_name)
+
+
+def save_to_qiniu(file, file_name):
+    return qiniu_upload_file(file, file_name)
+
 
 def save_to_local(file, file_name):
     save_dir = app.config['UPLOAD_DIR']
     file.save(os.path.join(save_dir, file_name))
-    return  '/image/' + file_name
-
-@app.route('/image/<image_name>')
-def view_image(image_name):
-     return send_from_directory(app.config['UPLOAD_DIR'], image_name)
+    return '/image/' + file_name
 
 
-@app.route('/upload/', methods={'post'})
+@app.route('/upload/', methods={"post"})
+@login_required
 def upload():
-    #print(request.files)
-    #print(type(request.files))
     file = request.files['file']
-    #print(dir(file))
+    # http://werkzeug.pocoo.org/docs/0.10/datastructures/
+    # 需要对文件进行裁剪等操作
     file_ext = ''
-    if file.filename.find('.') > 0 :
-        file_ext = file.filename.rsplit('.',1)[1].strip().lower()
+    if file.filename.find('.') > 0:
+        file_ext = file.filename.rsplit('.', 1)[1].strip().lower()
     if file_ext in app.config['ALLOWED_EXT']:
-        file_name = str(uuid.uuid1()).replace('-','') + '.' + file_ext
-        url = save_to_local(file, file_name)
+        file_name = str(uuid.uuid1()).replace('-', '') + '.' + file_ext
+        url = qiniu_upload_file(file, file_name)
+        # url = save_to_local(file, file_name)
         if url != None:
             db.session.add(Image(url, current_user.id))
             db.session.commit()
