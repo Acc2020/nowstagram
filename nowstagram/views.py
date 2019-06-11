@@ -143,15 +143,26 @@ def view_image(image_name):
     return send_from_directory(app.config['UPLOAD_DIR'], image_name)
 
 
+@app.route('/addcomment/', methods={'post'})
+@login_required
+def add_comment():
+    image_id = int(request.values['image_id'])
+    content = request.values['content']
+    comment = Comment(content, image_id, current_user.id)
+    db.session.add(comment)
+    db.session.commit()
+    return json.dumps({"code":0, "id":comment.id,
+                       "content":comment.content,
+                       "username":comment.user.username,
+                       "user_id":comment.user_id})
+
 def save_to_qiniu(file, file_name):
     return qiniu_upload_file(file, file_name)
-
 
 def save_to_local(file, file_name):
     save_dir = app.config['UPLOAD_DIR']
     file.save(os.path.join(save_dir, file_name))
     return '/image/' + file_name
-
 
 @app.route('/upload/', methods={"post"})
 @login_required
@@ -164,12 +175,12 @@ def upload():
         file_ext = file.filename.rsplit('.', 1)[1].strip().lower()
     if file_ext in app.config['ALLOWED_EXT']:
         file_name = str(uuid.uuid1()).replace('-', '') + '.' + file_ext
-        url = qiniu_upload_file(file, file_name)
-        # url = save_to_local(file, file_name)
+        #url = qiniu_upload_file(file, file_name)
+        url = save_to_local(file, file_name)
         if url != None:
             db.session.add(Image(url, current_user.id))
             db.session.commit()
 
     return redirect('/profile/%d' % current_user.id)
 
-
+#11111
