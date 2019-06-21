@@ -3,16 +3,20 @@
 from nowstagram import app, db
 from flask_script import Manager
 from nowstagram.models import User, Image, Comment
-import random,tests,unittest
+import random, unittest
 from sqlalchemy import or_, nullsfirst
 
 manager = Manager(app)
 
+
 def get_image_url():
     return 'http://images.nowcoder.com/head/' + str(random.randint(0, 1000)) + 'm.png'
 
+
 @manager.command
 def run_test():
+    db.drop_all()
+    db.create_all()
     tests = unittest.TestLoader().discover('./')
     unittest.TextTestRunner().run(tests)
     pass
@@ -39,7 +43,7 @@ def init_database():
     db.session.commit()
 
     for i in range(50, 100, 2):
-        commit = Comment.query.get(i+1)
+        commit = Comment.query.get(i + 1)
         db.session.delete(commit)
     db.session.commit()
 
@@ -60,7 +64,6 @@ def init_database():
     print(10, user.images, get_image_url())
     image = Image.query.get(2)
     print(11, get_image_url(), image.user)
-
 
 
 if __name__ == '__main__':
