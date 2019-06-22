@@ -15,11 +15,11 @@ def get_image_url():
 
 @manager.command
 def run_test():
-    db.drop_all()
-    db.create_all()
+    # db.drop_all()
+    # db.create_all()
     tests = unittest.TestLoader().discover('./')
     unittest.TextTestRunner().run(tests)
-    pass
+
 
 
 @manager.command
