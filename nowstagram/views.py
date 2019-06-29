@@ -1,12 +1,13 @@
 # -*- encoding = UTF-8 -*-
 
-from nowstagram import app, db, login_manager
+from nowstagram import app, db,mail
 from nowstagram.models import User, Image, Comment
 from flask import render_template, redirect, request, flash, get_flashed_messages, send_from_directory, Flask
 import random, hashlib, json, uuid, os
 from flask_login import login_user, logout_user, current_user, login_required
 from qiniusdk import qiniu_upload_file
-
+from flask_mail import Mail,Message
+from threading import Thread
 
 @app.route('/index/images/<int:page>/<int:per_page>/')
 def index_images(page, per_page):
@@ -183,4 +184,27 @@ def upload():
 
     return redirect('/profile/%d' % current_user.id)
 
-#11111
+
+#Flask-mail 邮件发送验证处理
+#异步邮件发送
+
+
+
+
+def send_async_email(app, msg):
+    with app.app_context():
+        mail.send(msg)
+
+
+@app.route('/mail/')
+def send_mail():
+    msg = Message(subject='Hello World',
+                  sender='807098855@qq.com',  # 需要使用默认发送者则不用填
+                  recipients=['18226568070@139.com', 'tyh164@qq.com'])
+    # 邮件内容会以文本和html两种格式呈现，而你能看到哪种格式取决于你的邮件客户端。
+    msg.body = 'sended by flask-email'
+    msg.html = '<b>测试Flask发送邮件<b>'
+    thread = Thread(target=send_async_email, args=[app, msg])
+    thread.start()
+    #mail.send(msg)
+    return '<h1>邮件发送成功</h1>'

@@ -21,6 +21,7 @@ def run_test():
     unittest.TextTestRunner().run(tests)
 
 
+#邮件发送模块
 
 @manager.command
 def init_database():
@@ -64,6 +65,8 @@ def init_database():
     print(10, user.images, get_image_url())
     image = Image.query.get(2)
     print(11, get_image_url(), image.user)
+
+
 
 
 if __name__ == '__main__':
