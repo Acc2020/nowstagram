@@ -5,7 +5,7 @@
 <main class="main login-main" role="main">
     <article class="login-cont clearfix">
         <div class="login-pic-box">
-            <img src="/static/images/res/nkFamily.jpg">
+            <img src="/static/images/res/nkFamily.jpg" height="330px" >
         </div>
         <div class="login-wrapper">
             <div class="login-box">
@@ -17,15 +17,18 @@
                         注册 Nowstagram
                         {% endif %}
                     </h2>
+
                     <div class="form-item">
                         <input class="input-txt"  aria-label="用户名" aria-required="true" autocapitalize="off" autocorrect="off" maxlength="30" name="username" placeholder="用户名" value="" type="text" data-reactid=".0.1.0.1.0.1.0.5.0">
                     </div>
                     <div class="form-item">
                         <input class="input-txt" aria-describedby="" aria-label="密码" aria-required="true" autocapitalize="off" autocorrect="off" name="password" placeholder="密码" type="password" value="" data-reactid=".0.1.0.1.0.1.0.6.0">
                     </div>
+                    <div class="form-item">
+                        <input class="input-txt" aria-label="邮箱" aria-required="true" autocapitalize="off" autocorrect="off" name="register e-mail" placeholder="邮箱" type="email" value="" data-reactid=".0.1.0.1.0.1.0.7.0">
+                    </div>
                     <input type="hidden" name="next" value="{{next}}"/>
                     <div class="btn-wrapper">
-
                         <button class="btn-primary" onclick="form=document.getElementById('regloginform');form.action='/login/';">登录</button>
                          <button class="btn-primary" onclick="form=document.getElementById('regloginform');form.action='/reg/';">注册</button>
                     </div>
